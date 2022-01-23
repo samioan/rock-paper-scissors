@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { CtaButton, Image } from "./components";
+import Typography from "@mui/material/Typography";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import { paper, rock, scissors } from "./images";
+
+import "./App.css";
+
+const App = () => (
+  <div className="App">
+    <Typography align="center" variant="h1" className="test">
+      Rock Paper Scissors
+    </Typography>
+
+    <div className="container">
+      <CtaButton
+        color="secondary"
+        size="large"
+        variant="contained"
+        label="Create Game"
+        className="button"
+      />
+      <CtaButton
+        color="warning"
+        size="large"
+        variant="contained"
+        label="Join Game"
+        className="button"
+      />
     </div>
-  );
-}
+
+    <div className="container">
+      <Image content={paper} className="image" />
+      <Image content={rock} className="image" />
+      <Image content={scissors} className="image" />
+    </div>
+  </div>
+);
 
 export default App;
