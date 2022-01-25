@@ -1,25 +1,7 @@
 .App {
-  width: 100vw;
   height: 100vh;
   background-image: url("images/background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
-.test {
-  color: white;
-  filter: drop-shadow(0 2mm 0mm #9c27b0);
-}
-.container {
-  display: flex;
-  flex-direction: column;
-}
-.button {
-  width: 320px;
-  height: 80px;
-  font-size: 2rem !important;
-}
-.image {
-  width: 200px;
-  height: 200px;
 }

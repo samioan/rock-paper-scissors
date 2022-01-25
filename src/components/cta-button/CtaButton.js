@@ -24,5 +24,16 @@ const CtaButton = ({
   </Button>
 );
 
+CtaButton.defaultProps = {
+  color: "secondary",
+  disabled: false,
+  variant: "contained",
+  size: "large",
+  href: "",
+  onClick: () => {},
+  label: "Label",
+  className: "",
+};
+
 export { CtaButton };
 export default CtaButton;
