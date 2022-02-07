@@ -6,12 +6,12 @@ import CtaButton from "../cta-button";
 import "./SplashPage.css";
 
 const SplashPage = () => (
-  <div className="general-container">
-    <div className="items-container">
-      <Typography align="center" variant="h1" className="title">
+  <div>
+    <div className="splash-container">
+      <Typography align="center" variant="h2" className="title">
         Rock Paper Scissors
       </Typography>
-      <Typography align="center" variant="h3" className="subtitle">
+      <Typography align="center" variant="h4" className="subtitle">
         An app for decision making!
       </Typography>
       <div className="button-container">

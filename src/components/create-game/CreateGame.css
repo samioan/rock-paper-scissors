@@ -1,0 +1,32 @@
+.items-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  border: 10px solid #9c27b0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#create-textfield {
+  border-radius: 5px;
+  background-color: #9c27b0;
+}
+
+.MuiTextField-root > label {
+  color: white;
+}
+
+.back-button {
+  position: absolute !important;
+  right: 0;
+  top: calc(100% - 153px);
+  width: 80px;
+  height: 80px;
+}
+.back-button > svg {
+  width: 80px;
+  height: 80px;
+}
+.back-icon {
+  color: white;
+}

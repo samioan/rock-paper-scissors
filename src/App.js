@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { SplashPage, CreateGame, JoinGame } from "./components";
+import { SplashPage, CreateGame, JoinGame, Footer } from "./components";
 
 import "./App.css";
 
@@ -13,6 +13,7 @@ const App = () => (
         <Route path="create-game" element={<CreateGame />} />
         <Route path="join-game" element={<JoinGame />} />
       </Routes>
+      <Footer />
     </Router>
   </div>
 );
