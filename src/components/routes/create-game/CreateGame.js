@@ -1,33 +1,35 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-import CtaButton from "../cta-button";
+import { CtaButton } from "../../library";
 
-import "./JoinGame.css";
+import "./CreateGame.css";
 
-const JoinGame = () => (
+const CreateGame = () => (
   <div>
-    <div className="items-container">
+    <Grid container justifyContent="space-between" className="items-container">
       <TextField
         required
-        id="join-textfield"
-        label="Enter Code"
+        id="create-textfield"
+        label="Create Code"
         variant="filled"
       />
       <CtaButton
-        color="warning"
+        color="secondary"
         size="large"
         variant="contained"
-        label="Join Game"
+        label="Create Game"
+        href="game-page"
       />
-    </div>
+    </Grid>
     <IconButton className="back-button" href="/">
       <ArrowBackIcon className="back-icon" />
     </IconButton>
   </div>
 );
 
-export { JoinGame };
-export default JoinGame;
+export { CreateGame };
+export default CreateGame;

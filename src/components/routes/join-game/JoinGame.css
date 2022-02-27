@@ -1,21 +1,10 @@
-.items-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 32px;
-  border: 10px solid #9c27b0;
+#join-textfield {
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ed6c02;
 }
-
-#create-textfield {
-  border-radius: 5px;
-  background-color: #9c27b0;
-}
-
 .MuiTextField-root > label {
   color: white;
 }
-
 .back-button {
   position: absolute !important;
   right: 0;

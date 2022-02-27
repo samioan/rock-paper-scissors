@@ -1,0 +1,26 @@
+.score-container {
+  padding: 16px;
+  border: 10px solid #9c27b0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: fit-content;
+}
+.score-text {
+  color: white;
+}
+.bottom-action-container {
+  padding: 16px;
+  border: 10px solid #9c27b0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 73px;
+}
+.game-buttons-container {
+  width: 30% !important;
+}
+.leave-button {
+  width: 320px;
+  height: 80px;
+  font-size: 2rem !important;
+}
