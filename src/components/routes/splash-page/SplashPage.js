@@ -18,15 +18,15 @@ const SplashPage = () => (
       <CtaButton
         color="secondary"
         size="large"
-        variant="contained"
+        variant="outlined"
         label="Create Game"
         className="button"
-        href="create-game"
+        href="game-page"
       />
       <CtaButton
         color="warning"
         size="large"
-        variant="contained"
+        variant="outlined"
         label="Join Game"
         className="button"
         href="join-game"

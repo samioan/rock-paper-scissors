@@ -10,17 +10,19 @@ import "./JoinGame.css";
 
 const JoinGame = () => (
   <div>
-    <Grid container justifyContent="space-between" className="items-container">
+    <Grid container justifyContent="center" className="join-game-container">
       <TextField
         required
         id="join-textfield"
         label="Enter Code"
         variant="filled"
+        color="warning"
       />
       <CtaButton
+        className="join-button"
         color="warning"
         size="large"
-        variant="contained"
+        variant="outlined"
         label="Join Game"
         href="game-page"
       />

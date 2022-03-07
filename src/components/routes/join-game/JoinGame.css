@@ -1,14 +1,24 @@
-#join-textfield {
-  border-radius: 5px;
-  background-color: #ed6c02;
+.join-game-container {
+  padding: 32px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  gap: 20px;
+}
+.MuiTextField-root {
+  border: 1px solid rgb(237, 108, 2) !important;
 }
 .MuiTextField-root > label {
-  color: white;
+  color: rgb(237, 108, 2);
+  font-family: "Ubuntu", sans-serif !important;
+}
+.MuiTextField-root > div > input {
+  color: rgb(237, 108, 2);
+  font-family: "Ubuntu", sans-serif !important;
 }
 .back-button {
   position: absolute !important;
-  right: 0;
-  top: calc(100% - 153px);
+  top: 0px;
+  left: 0px;
   width: 80px;
   height: 80px;
 }
@@ -17,5 +27,8 @@
   height: 80px;
 }
 .back-icon {
-  color: white;
+  color: rgb(237, 108, 2);
+}
+.join-button {
+  font-family: "Ubuntu", sans-serif !important;
 }

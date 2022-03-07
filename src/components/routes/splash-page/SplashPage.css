@@ -1,20 +1,22 @@
 .splash-container {
   padding: 32px;
-  border: 10px solid #9c27b0;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .title {
   color: white;
   padding-bottom: 32px;
+  font-family: "Ubuntu", sans-serif !important;
 }
 .subtitle {
   color: white;
   padding-bottom: 32px;
+  font-family: "Ubuntu", sans-serif !important;
 }
 .button {
   width: 320px;
   height: 80px;
   font-size: 2rem !important;
   margin-bottom: 16px !important;
+  font-family: "Ubuntu", sans-serif !important;
 }

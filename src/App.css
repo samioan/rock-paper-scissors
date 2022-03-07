@@ -5,3 +5,18 @@
   background-position: center;
   background-size: cover;
 }
+.general-splash-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+.general-join-game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+.general-game-page-container {
+  height: inherit;
+}

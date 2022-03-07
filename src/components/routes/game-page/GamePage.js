@@ -12,33 +12,24 @@ const GamePage = () => (
   <div>
     <div className="score-container">
       <Typography align="left" variant="h6" className="score-text">
-        Wins:
+        Wins
       </Typography>
       <Typography align="left" variant="h6" className="score-text">
-        Losses:
+        Losses
       </Typography>
       <Typography align="left" variant="h6" className="score-text">
-        Draws:
+        Draws
       </Typography>
     </div>
-    <Grid
-      container
-      justifyContent="space-between"
-      alignItems="center"
-      className="bottom-action-container"
-    >
-      <Grid
-        container
-        justifyContent="space-between"
-        className="game-buttons-container"
-      >
-        <IconButton>
+    <Grid container alignItems="center" className="bottom-action-container">
+      <Grid container className="game-buttons-container">
+        <IconButton className="icon-button">
           <img src={rock} alt="rock" />
         </IconButton>
-        <IconButton>
+        <IconButton className="icon-button">
           <img src={paper} alt="paper" />
         </IconButton>
-        <IconButton>
+        <IconButton className="icon-button">
           <img src={scissors} alt="scissors" />
         </IconButton>
       </Grid>
@@ -47,7 +38,7 @@ const GamePage = () => (
           className="leave-button"
           color="secondary"
           size="medium"
-          variant="contained"
+          variant="outlined"
           label="Leave Game"
           href="/"
         />
