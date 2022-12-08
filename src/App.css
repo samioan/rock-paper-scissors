@@ -1,22 +1,7 @@
 .App {
-  height: 100vh;
-  background-image: url("images/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  min-height: 100vh;
+  background-color: #f2e9eb;
+  background-image: url('images/background.png');
   background-size: cover;
 }
-.general-splash-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-}
-.general-join-game-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-}
-.general-game-page-container {
-  height: inherit;
-}
+
