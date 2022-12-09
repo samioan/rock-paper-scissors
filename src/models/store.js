@@ -1,23 +1,14 @@
 import rootEpic from "./rootEpic";
 import rootReducer from "./rootReducer";
-import { createStore, applyMiddleware, compose } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import { createEpicMiddleware } from "redux-observable";
 
-const enhancers = [];
-
-const { __REDUX_DEVTOOLS_EXTENSION__: devToolsExtension } = global;
 const epicMiddleware = createEpicMiddleware();
-const middleware = [epicMiddleware];
 
-if (devToolsExtension && typeof devToolsExtension === "function") {
-  enhancers.push(devToolsExtension());
-}
-
-const store = createStore(
-  rootReducer,
-  {},
-  compose(applyMiddleware(...middleware), ...enhancers)
-);
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: [epicMiddleware],
+});
 
 epicMiddleware.run(rootEpic);
 
