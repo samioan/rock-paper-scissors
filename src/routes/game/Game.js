@@ -16,6 +16,8 @@ const Game = ({
   playerResult,
   onRetry,
   resultMessage,
+  onLeave,
+  sessionEnded,
 }) => {
   return (
     <Grid container direction="column" alignItems="center" sx={{ py: 4 }}>
@@ -33,58 +35,78 @@ const Game = ({
           width: 264,
         }}
       >
-        <Typography sx={{ color: "#31383f", mb: 2 }}>{playerName}</Typography>
-        <Typography
-          sx={{ color: "#31383f" }}
-        >{`Wins: ${playerWins}`}</Typography>
-        <Typography
-          sx={{ color: "#31383f" }}
-        >{`Losses: ${playerLosses}`}</Typography>
-        <Typography
-          sx={{ color: "#31383f" }}
-        >{`Draws: ${playerDraws}`}</Typography>
-        {!playerSelection && !playerResult && (
-          <Grid container direction="column" alignItems="center" sx={{ mt: 2 }}>
-            <Typography sx={{ color: "#31383f", mb: 1 }}>
-              Make your selection
-            </Typography>
-            <Grid container gap={1} justifyContent="center">
-              <IconButton
-                disableRipple
-                onClick={() => setSelection("rock")}
-                sx={{ width: 32, height: 32 }}
-              >
-                <img src={rock} alt="Rock" style={{ width: 32, height: 32 }} />
-              </IconButton>
-              <IconButton
-                onClick={() => setSelection("paper")}
-                sx={{ width: 32, height: 32 }}
-              >
-                <img
-                  src={paper}
-                  alt="Paper"
-                  style={{ width: 32, height: 32 }}
-                />
-              </IconButton>
-              <IconButton
-                onClick={() => setSelection("scissors")}
-                sx={{ width: 32, height: 32 }}
-              >
-                <img
-                  src={scissors}
-                  alt="Scissors"
-                  style={{ width: 32, height: 32 }}
-                />
-              </IconButton>
-            </Grid>
-          </Grid>
+        {sessionEnded && (
+          <Typography sx={{ color: "#31383f" }}>
+            The session has ended.
+          </Typography>
         )}
-        {playerSelection && (
+        {!sessionEnded && (
+          <>
+            <Typography sx={{ color: "#31383f", mb: 2 }}>
+              {playerName}
+            </Typography>
+            <Typography
+              sx={{ color: "#31383f" }}
+            >{`Wins: ${playerWins}`}</Typography>
+            <Typography
+              sx={{ color: "#31383f" }}
+            >{`Losses: ${playerLosses}`}</Typography>
+            <Typography
+              sx={{ color: "#31383f" }}
+            >{`Draws: ${playerDraws}`}</Typography>
+            {!playerSelection && !playerResult && (
+              <Grid
+                container
+                direction="column"
+                alignItems="center"
+                sx={{ mt: 2 }}
+              >
+                <Typography sx={{ color: "#31383f", mb: 1 }}>
+                  Make your selection
+                </Typography>
+                <Grid container gap={1} justifyContent="center">
+                  <IconButton
+                    disableRipple
+                    onClick={() => setSelection("rock")}
+                    sx={{ width: 32, height: 32 }}
+                  >
+                    <img
+                      src={rock}
+                      alt="Rock"
+                      style={{ width: 32, height: 32 }}
+                    />
+                  </IconButton>
+                  <IconButton
+                    onClick={() => setSelection("paper")}
+                    sx={{ width: 32, height: 32 }}
+                  >
+                    <img
+                      src={paper}
+                      alt="Paper"
+                      style={{ width: 32, height: 32 }}
+                    />
+                  </IconButton>
+                  <IconButton
+                    onClick={() => setSelection("scissors")}
+                    sx={{ width: 32, height: 32 }}
+                  >
+                    <img
+                      src={scissors}
+                      alt="Scissors"
+                      style={{ width: 32, height: 32 }}
+                    />
+                  </IconButton>
+                </Grid>
+              </Grid>
+            )}
+          </>
+        )}
+        {!sessionEnded && playerSelection && (
           <Typography
             sx={{ color: "#31383f", mt: 2 }}
           >{`You chose ${playerSelection}`}</Typography>
         )}
-        {playerResult && (
+        {!sessionEnded && playerResult && (
           <>
             <Typography sx={{ color: "#31383f", mt: 2, mb: 2 }}>
               {resultMessage}
@@ -108,6 +130,24 @@ const Game = ({
             </Button>
           </>
         )}
+        <Button
+          onClick={onLeave}
+          sx={{
+            mt: 1,
+            bgcolor: "transparent",
+            borderRadius: "32px",
+            color: "#31383f",
+            px: 2,
+            py: 1,
+            width: 150,
+            boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;",
+            "&:hover": {
+              bgcolor: "transparent",
+            },
+          }}
+        >
+          Leave Game
+        </Button>
       </Grid>
     </Grid>
   );

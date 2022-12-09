@@ -3,6 +3,8 @@ import {
   setPlayerSelection,
   setPlayerPending,
   setPlayerResult,
+  setSessionEnded,
+  resetPlayerState,
 } from "./actions";
 
 import {
@@ -13,6 +15,7 @@ import {
   playerSelection,
   playerPending,
   playerResult,
+  sessionEnded,
 } from "./selectors";
 
 export {
@@ -20,6 +23,8 @@ export {
   setPlayerSelection,
   setPlayerPending,
   setPlayerResult,
+  setSessionEnded,
+  resetPlayerState,
   playerName,
   playerWins,
   playerLosses,
@@ -27,4 +32,5 @@ export {
   playerSelection,
   playerPending,
   playerResult,
+  sessionEnded,
 };

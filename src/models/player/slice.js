@@ -8,6 +8,7 @@ const initialState = {
   playerSelection: "",
   playerResult: "",
   playerPending: false,
+  sessionEnded: false,
 };
 
 const reducers = {
@@ -26,6 +27,10 @@ const reducers = {
     state.playerWins += payload === "Win" ? 1 : 0;
     state.playerLosses += payload === "Loss" ? 1 : 0;
   },
+  setSessionEnded: (state, { payload }) => {
+    state.sessionEnded = payload;
+  },
+  resetPlayerState: () => initialState,
 };
 
 export const playerSlice = createSlice({

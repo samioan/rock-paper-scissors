@@ -13,7 +13,7 @@ import {
   isGameCreated,
   resetGameState,
 } from "models/game";
-import { setPlayerName } from "models/player";
+import { setPlayerName, resetPlayerState } from "models/player";
 import { withModelProps } from "aa-minimal-core-lib/components/model-props";
 
 const withCreateGameProps = (Component) => (props) => {
@@ -26,6 +26,7 @@ const withCreateGameProps = (Component) => (props) => {
     isGameCreated,
     setPlayerName,
     resetGameState,
+    resetPlayerState,
   } = props;
 
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const withCreateGameProps = (Component) => (props) => {
   };
 
   const goToGame = () => {
-    setGameCreated(false);
+    resetPlayerState();
     setPlayerName(createdName);
     navigate(`game/${gameId}`);
     resetGameState();
@@ -80,6 +81,7 @@ export default compose(
     isGameCreated,
     setPlayerName,
     resetGameState,
+    resetPlayerState,
   }),
   withCreateGameProps
 );

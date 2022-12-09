@@ -5,6 +5,7 @@ const playerDraws = (state) => state.player.playerDraws;
 const playerSelection = (state) => state.player.playerSelection;
 const playerPending = (state) => state.player.playerPending;
 const playerResult = (state) => state.player.playerResult;
+const sessionEnded = (state) => state.player.sessionEnded;
 
 export {
   playerName,
@@ -14,4 +15,5 @@ export {
   playerSelection,
   playerPending,
   playerResult,
+  sessionEnded,
 };

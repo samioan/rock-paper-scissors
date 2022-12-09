@@ -1,7 +1,7 @@
 import { compose } from "redux";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { ref, set, onValue } from "firebase/database";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { ref, set, onValue, remove } from "firebase/database";
 
 import { db } from "backend";
 import {
@@ -15,6 +15,8 @@ import {
   playerPending,
   playerResult,
   setPlayerResult,
+  sessionEnded,
+  setSessionEnded,
 } from "models/player";
 import { withModelProps } from "aa-minimal-core-lib/components/model-props";
 
@@ -30,9 +32,13 @@ const withGameProps = (Component) => (props) => {
     playerPending,
     playerResult,
     setPlayerResult,
+    sessionEnded,
+    setSessionEnded,
   } = props;
 
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     onValue(ref(db, `games/${id}/players`), (snapshot) => {
@@ -82,7 +88,7 @@ const withGameProps = (Component) => (props) => {
           }
         } else setPlayerPending(true);
       } else {
-        console.log("error");
+        setSessionEnded(true);
       }
     });
     // eslint-disable-next-line
@@ -116,6 +122,11 @@ const withGameProps = (Component) => (props) => {
     }
   })();
 
+  const onLeave = () => {
+    remove(ref(db, `games/${id}`));
+    navigate(`home`);
+  };
+
   const newProps = {
     ...props,
     playerName,
@@ -129,6 +140,8 @@ const withGameProps = (Component) => (props) => {
     playerResult,
     onRetry,
     resultMessage,
+    onLeave,
+    sessionEnded,
   };
 
   return <Component {...newProps} />;
@@ -147,6 +160,8 @@ export default compose(
     setPlayerSelection,
     setPlayerPending,
     setPlayerResult,
+    sessionEnded,
+    setSessionEnded,
   }),
   withGameProps
 );

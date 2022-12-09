@@ -13,7 +13,7 @@ import {
   setGameError,
   resetGameState,
 } from "models/game";
-import { setPlayerName } from "models/player";
+import { setPlayerName, resetPlayerState } from "models/player";
 import { withModelProps } from "aa-minimal-core-lib/components/model-props";
 
 const withJoinGameProps = (Component) => (props) => {
@@ -26,6 +26,7 @@ const withJoinGameProps = (Component) => (props) => {
     setGameError,
     setPlayerName,
     resetGameState,
+    resetPlayerState,
   } = props;
 
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ const withJoinGameProps = (Component) => (props) => {
             draws: 0,
             selection: "",
           });
+          resetPlayerState();
           setPlayerName(createdName);
           navigate(`game/${gameId}`);
           resetGameState();
@@ -84,6 +86,7 @@ export default compose(
     setGameError,
     setPlayerName,
     resetGameState,
+    resetPlayerState,
   }),
   withJoinGameProps
 );
