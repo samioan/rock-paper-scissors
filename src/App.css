@@ -1,0 +1,7 @@
+.App {
+  min-height: 100vh;
+  background-color: #f2e9eb;
+  background-image: url('images/background.png');
+  background-size: cover;
+}
+
