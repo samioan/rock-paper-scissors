@@ -1,6 +1,6 @@
 import { compose } from "redux";
 import { useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ref, set, onValue, remove } from "firebase/database";
 
 import { db } from "backend";
@@ -38,7 +38,6 @@ const withGameProps = (Component) => (props) => {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     onValue(ref(db, `games/${id}/players`), (snapshot) => {
