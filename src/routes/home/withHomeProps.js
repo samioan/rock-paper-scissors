@@ -18,6 +18,19 @@ const withHomeProps = (Component) => (props) => {
     isGameCreated,
   } = props;
 
+  const buttons = [
+    {
+      title: "Create a Game",
+      onClick: setCreateGame,
+      style: "createGameButton",
+    },
+    {
+      title: "Join a Game",
+      onClick: setJoinGame,
+      style: "joinGameButton",
+    },
+  ];
+
   const newProps = {
     ...props,
     isCreateGameOpen,
@@ -25,6 +38,7 @@ const withHomeProps = (Component) => (props) => {
     setCreateGame,
     setJoinGame,
     isGameCreated,
+    buttons,
   };
 
   return <Component {...newProps} />;
