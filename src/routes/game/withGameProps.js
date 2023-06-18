@@ -18,6 +18,7 @@ import {
   sessionEnded,
   setSessionEnded,
 } from "models/player";
+import { rock, paper, scissors } from "images";
 import { withModelProps } from "aa-minimal-core-lib/components/model-props";
 
 const withGameProps = (Component) => (props) => {
@@ -126,6 +127,12 @@ const withGameProps = (Component) => (props) => {
     navigate(`home`);
   };
 
+  const selections = [
+    { img: rock, label: "rock" },
+    { img: paper, label: "paper" },
+    { img: scissors, label: "scissors" },
+  ];
+
   const newProps = {
     ...props,
     playerName,
@@ -141,6 +148,7 @@ const withGameProps = (Component) => (props) => {
     resultMessage,
     onLeave,
     sessionEnded,
+    selections,
   };
 
   return <Component {...newProps} />;

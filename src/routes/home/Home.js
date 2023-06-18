@@ -28,7 +28,7 @@ const Home = ({
           key={title}
           onClick={onClick}
           disabled={isGameCreated}
-          sx={styles[style]}
+          sx={{ ...styles.button, ...styles[style] }}
         >
           {title}
         </Button>
